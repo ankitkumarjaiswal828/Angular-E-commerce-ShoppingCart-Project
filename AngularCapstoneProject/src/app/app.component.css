@@ -1,0 +1,60 @@
+a {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: medium;
+    font-size: 20px;
+}
+
+li {
+    font-weight: bolder;
+}
+
+li:hover {
+    background-color: #0f95fc;
+    border-radius: 8px;
+
+}
+
+#logo {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: larger;
+    color: red;
+}
+
+#btn {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-size: 18px;
+    color: #0d6efd;
+    margin-right: 50px;
+}
+
+#logo {
+    height: 45px;
+    border-radius: 8px;
+    width: 70px;
+    margin-right: 5px;
+}
+
+#cart {
+    height: 25px;
+    margin-right: 5px;
+    
+}
+
+.login{
+margin-left: 300px;
+}
+.logout {
+    background-color: hsl(216, 98%, 52%);
+    border: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.logout:hover{
+    background-color: #0f95fc;
+    border-radius: 8px;
+}
+.atc{
+    text-decoration: none;
+}

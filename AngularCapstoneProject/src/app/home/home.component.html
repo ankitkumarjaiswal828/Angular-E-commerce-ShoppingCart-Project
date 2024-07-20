@@ -1,0 +1,53 @@
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+            <img src="../assets/Craousal/a1.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block ist_craousal">
+                <h3>Buy Best Quality Smart Phone</h3>
+                <p>Light Weight and Most affordable 5G Smart Phone.</p>
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+            <img src="../assets/Craousal/b.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="../assets/Craousal/c1.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
+
+<div class="row" >
+    <div class="col-md-4" *ngFor="let prodList of product_list">
+        <div class="card">
+            <img [src]="prodList.product_img" class="card-img-top img" alt="{{prodList.product_name}}">
+            <div class="card-body dt">
+                <h3 class="card-title name"><b>{{prodList.product_name}}</b></h3>
+                <h4 class="card-text price"><b>price</b> ₹{{prodList.product_price}}/-</h4>
+                <p class="card-text desc">{{prodList.product_Description}}.</p>
+                <a  class="btn btn-primary cart" target="_blank">Add To Cart</a>
+                <a [href]="prodList.product_url" class="btn btn-primary info" target="_blank">More Info</a>
+            </div>
+        </div>
+    </div>
+</div>
+

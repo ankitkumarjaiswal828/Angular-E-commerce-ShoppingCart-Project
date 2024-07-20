@@ -1,0 +1,24 @@
+<div class="d-flex srh">
+    <input class="form-control me-2" type="search" [(ngModel)]="searchitem" placeholder="Search products by name..."
+        aria-label="Search">
+    <button class="btn btn-outline-danger " type="submit">Search</button>
+</div>
+
+<div class="success-message" *ngIf="showSuccessMessage" @fade>
+    Product added to cart successfully!
+</div>
+
+<div class="row">
+    <div class="col-md-4" *ngFor="let prodList of products | productDetails:searchitem">
+        <div class="card">
+            <img [src]="prodList.product_img" class="card-img-top img" alt="{{prodList.product_name}}">
+            <div class="card-body dt">
+                <h3 class="card-title name"><b>{{prodList.product_name}}</b></h3>
+                <h4 class="card-text price"><b>price</b> ₹{{prodList.product_price}}/-</h4>
+                <p class="card-text desc">{{prodList.product_Description}}.</p>
+                <button (click)="addToCart(prodList)" class="atc"><a class="btn btn-primary cart" target="_blank">Add To Cart</a></button>
+                <a [href]="prodList.product_url" class="btn btn-primary info" target="_blank">More Info</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+.cart-container {
+    margin: 16px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.btn{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: red;
+    font-weight: bolder;
+    color: white;
+}
+
+img {
+    height: 100px;
+    width: 100px;
+}
+.dlt {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    margin-top: 15px;
+}
+.edit{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    
+}
+input::placeholder{
+    font-weight: 400;
+    color: black;
+}
+
+input{
+    width: 94px;
+        height: 23px;
+        border-radius: 5px;
+        text-align: center;
+}

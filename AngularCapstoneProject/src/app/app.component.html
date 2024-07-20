@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg  bg-primary mt-0">
+  <div class="container-fluid">
+    <div>
+      <img id="logo" src="../assets/logo.jpeg" alt="">
+    </div>
+    <a class="navbar-brand "
+      style="font-family:Georgia, 'Times New Roman', Times, serif;font-weight: bolder; font-size: 25px; color: lightcyan;"><i>ShoppingCart</i></a>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active text-light font-weight-bold" aria-current="page" routerLink="/home"
+            routerLinkActive="active">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active text-light " aria-current="page" routerLink="/prodetails"
+            routerLinkActive="active">Product Details</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active text-light" aria-current="page" routerLink="/aboutus"
+            routerLinkActive="active">About Us</a>
+        </li>
+      </ul>
+    </div>
+    <div class="collapse navbar-collapse login" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item me-0 ms-5">
+          <a class="nav-link active text-light hi" aria-current="page" *ngIf="!authService.isAuthenticatedUser()"
+            routerLink="/login" routerLinkActive="active">LogIn</a>
+        </li>
+      </ul>
+    </div>
+    <div class="collapse navbar-collapse " id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <button class="logout" (click)="logout()" *ngIf="authService.isAuthenticatedUser()"><a
+              class="nav-link active text-light" aria-current="page">Logout</a></button>
+        </li>
+      </ul>
+    </div>
+
+    <button id="btn" class="btn btn-light" type="submit"><img id="cart" src="../assets/cart.svg" alt="">
+      <a routerLink="/cart" routerLinkActive="active" class="atc"><i>Add to Cart</i></a></button>
+
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

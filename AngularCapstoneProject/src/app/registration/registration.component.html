@@ -1,0 +1,30 @@
+<div class="wrapper" [ngStyle]="{'background-color':'blue'}">
+    <form (ngSubmit)="register()">
+        <h1>Registration</h1>
+        <div class="input-box">
+            <input type="text" placeholder="Enter full name" [(ngModel)]="user.name" required>
+            <i class='bx bxs-user'></i>
+        </div>
+        <div class="input-box">
+            <input type="text" placeholder="Username" [(ngModel)]="user.username" required>
+            <i class='bx bxs-user'></i>
+        </div>
+
+        <div class="input-box">
+            <input type="password" placeholder="Password" [(ngModel)]="user.password" required>
+            <i class='bx bxs-lock-alt'></i>
+        </div>
+        <div class="input-box">
+            <input type="password" placeholder=" Confirm Password" [(ngModel)]="user.password" required>
+            <i class='bx bxs-lock-alt'></i>
+        </div>
+
+        <button type="submit" class="btn">Register</button>
+
+        <div class="register-link">
+            <p>If you already registered , Please <a aria-current="page" routerLink="/login"
+                    routerLinkActive="action">LogIn</a></p>
+        </div>
+        <p *ngIf="errorMessage">{{ errorMessage }}</p>
+    </form>
+</div>

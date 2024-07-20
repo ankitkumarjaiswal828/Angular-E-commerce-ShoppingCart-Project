@@ -1,0 +1,39 @@
+<div class="cart-container">
+    <h1>Shopping Cart</h1>
+    <div *ngIf="cartItems.length > 0; else emptyCart">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Product Image</th>
+                    <th>Product Name</th>
+                    <th>Product Description</th>
+                    <th>Product Price</th>
+                    <th>Update Quantity of Product</th>
+                    <th>Product Totol Price</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of cartItems">
+                    <td><img [src]="item.product_img" class="card-img-top img" alt="{{item.product_name}}"></td>
+                    <td>{{ item.product_name }}</td>
+                    <td>{{ item.product_Description }}</td>
+                    <td>{{ item.product_price |currency:"₹" }}</td>
+                    <td>
+                        <input type="number" [(ngModel)]="item.product_quantity"
+                            (change)="updateQuantity(item.id, item.product_quantity)" min="2" placeholder="1">
+                    </td>
+                    <td >{{ (item.product_price * item.product_quantity) | currency :"₹"}}</td>
+                   
+                </tr>
+            </tbody>
+            
+        </table>
+
+        <button (click)="clearCart()" class="btn" style="background-color: red; color: white;" mat-raised-button>Clear
+            Cart</button>
+    </div>
+    <ng-template #emptyCart>
+        <p>Your cart is empty</p>
+    </ng-template>
+</div>
