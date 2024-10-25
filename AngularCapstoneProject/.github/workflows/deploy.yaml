@@ -3,7 +3,7 @@ name: CI/CD for Angular App
 on:
   push:
     branches: [main]
-
+ 
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
