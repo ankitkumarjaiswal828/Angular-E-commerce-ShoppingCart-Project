@@ -2,35 +2,28 @@ name: CI/CD for Angular App
 
 on:
   push:
-    branches: [main]
-  workflow_dispatch:
-
-permissions:
-  contents: write
+    branches:
+      - main
 
 jobs:
-  build_and_deploy:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-        with:
-          sparse-checkout: . 
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: Setup Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
 
-      - name: install dependencies
-        run: npm install
+      - name: Build Angular app to prod
+        working-directory: AngularCapstoneProject
+        run: npm install && npm run build:prod
 
-      - name: Build Project
-        run: npm run build
-
-      - name: deploy to Github pages
+      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
-        
-
-      
+        with:
+          folder: AngularCapstoneProject/src/assets
+          branch: prod  
+          token: ${{ secrets.ANKIT_RUCHI }}
